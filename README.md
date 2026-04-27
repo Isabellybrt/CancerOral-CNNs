@@ -64,11 +64,15 @@ No Colab, as dependências já estão presentes (exceto `kaggle`).
 
 # 🚀 **Como Executar**
 
-## ✅ 1. Abra no Google Colab (recomendado)
+## ✅ 1. Baixe o arquivo 
 
-Faça upload do arquivo `OralCancer.ipynb` ou execute diretamente no notebook.
+Baixe o arquivo `oralcancer.py` e copie o código.
 
-## ✅ 2. Adicione sua API Key do Kaggle
+## ✅ 2. Abra no Google Colab 
+
+Cole o código na célula do colab.
+
+## ✅ 3. Adicione sua API Key do Kaggle
 
 Antes de rodar, faça upload do arquivo `kaggle.json`.
 
@@ -79,7 +83,7 @@ from google.colab import files
 files.upload()
 ```
 
-## ✅ 3. Baixe o Dataset
+## ✅ 4. Baixe o Dataset
 
 O script já contém:
 
@@ -88,7 +92,7 @@ O script já contém:
 !unzip -q oral-cancer-dataset.zip -d data
 ```
 
-## ✅ 4. Execute o treinamento
+## ✅ 5. Execute o treinamento
 
 Rode o bloco no Colab.
 
@@ -171,7 +175,4 @@ which enabled the training and evaluation of the convolutional neural networks.
 
 O código deste repositório é disponibilizado sob a licença **MIT**.
 O dataset é licenciado sob **Apache 2.0** e deve ser citado adequadamente.
-
-
-Quer adicionar algo?
 
