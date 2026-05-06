@@ -108,15 +108,15 @@ Rode o bloco no Colab.
 
 ---
 
-# **Metodologia: Validação Cruzada 5-Fold**
+# **Metodologia: Validação Cruzada Estratificada 5-Fold**
 
 O código utiliza:
 
-* `KFold(shuffle=True, random_state=42)`
+* `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`
 * 80% treino / 20% validação por fold
 * 5 execuções independentes para cada modelo
+* Estratificação garante a proporção original das classes em cada partição
 * Registro completo das métricas por fold
-
 ---
 
 # 📊 **Outputs Gerados**
@@ -151,13 +151,13 @@ Para cada modelo e para cada fold, são gerados automaticamente:
 
 # 📈 **Resultados (Resumo do Artigo)**
 
-| Modelo          | Recall    | Acurácia  | F1-score  | Precisão  |
-| --------------- | --------- | --------- | --------- | --------- |
-| **DenseNet121** | **0.945** | 0.937     | **0.951** | 0.957     |
-| **GoogLeNet**   | 0.936     | **0.943** | 0.931     | 0.927     |
-| **ResNet18**    | 0.935     | 0.936     | 0.947     | **0.960** |
+| Modelo          | Acurácia          | Precisão          | Recall            | Especificidade    | F1-score          | AUC               |
+| --------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| **DenseNet121** | 0.944 ± 0.021     | 0.938 ± 0.023     | **0.958 ± 0.020** | 0.929 ± 0.027     | **0.948 ± 0.020** | **0.985 ± 0.007** |
+| **ResNet18**    | 0.933 ± 0.023     | 0.934 ± 0.022     | 0.938 ± 0.027     | 0.927 ± 0.025     | 0.936 ± 0.022     | 0.979 ± 0.011     |
+| **GoogLeNet**   | 0.932 ± 0.022     | 0.936 ± 0.027     | 0.934 ± 0.023     | 0.929 ± 0.031     | 0.935 ± 0.021     | 0.972 ± 0.014     |
 
-A **DenseNet121** foi a arquitetura com melhor desempenho geral.
+Todas as arquiteturas alcançaram métricas médias superiores a 0,92 em todas as medidas avaliadas. Embora a DenseNet121 registre as maiores médias pontuais, a sobreposição das faixas de variação (desvio-padrão) impede afirmar diferença estatisticamente significativa entre os modelos.
 
 ---
 
